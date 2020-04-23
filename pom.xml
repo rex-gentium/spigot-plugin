@@ -18,7 +18,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <outputDirectory>F:\Games\spigot.server\plugins</outputDirectory>
+                    <outputDirectory>${pluginTargetDir}</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
