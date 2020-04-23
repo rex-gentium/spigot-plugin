@@ -6,3 +6,6 @@ commands:
   kit:
     description: Your description
     usage: /<command>
+  rainbow:
+    description: Your description
+    usage: /<command>

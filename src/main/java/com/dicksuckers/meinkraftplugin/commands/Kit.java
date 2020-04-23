@@ -27,5 +27,4 @@ public class Kit implements CommandExecutor {
         ItemStack bricks = new ItemStack(Material.BRICK, 20);
         return new ItemStack[] { diamond, bricks };
     }
-
 }
