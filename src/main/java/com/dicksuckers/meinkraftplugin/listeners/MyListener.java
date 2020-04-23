@@ -22,20 +22,29 @@ public class MyListener implements Listener {
         }
         Location from = event.getFrom();
         Location to = event.getTo();
-        if (to == null || from.equals(to)) {
-            return; // coordinated did not change
+        if (to == null) {
+            return; // no destination
+        }
+        if (areEqualBlockPositions(from, to)) {
+            return; // coordinates did not change
         }
         String playerName = event.getPlayer().getName();
-        String message = String.format("Player %s moved from %s to %s",
-                playerName, locationToString(from), locationToString(to));
+        String message = String.format("Player %s moved to %s",
+                playerName, locationToString(to));
         Bukkit.broadcastMessage(message);
     }
 
+    private boolean areEqualBlockPositions(Location left, Location right) {
+        return left.getBlockX() == right.getBlockX()
+                && left.getBlockY() == right.getBlockY()
+                && left.getBlockZ() == right.getBlockZ();
+    }
+
     private String locationToString(Location location) {
-        return String.format("(%f, %f, %f)",
-                location.getX(),
-                location.getY(),
-                location.getZ());
+        return String.format("(%d, %d, %d)",
+                location.getBlockX(),
+                location.getBlockY(),
+                location.getBlockZ());
     }
 
 }
