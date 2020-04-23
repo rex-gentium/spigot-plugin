@@ -1,0 +1,8 @@
+name: MeinkraftPlugin
+version: "1.0"
+main: com.dicksuckers.meinkraftplugin.MeinkraftPlugin
+
+commands:
+  kit:
+    description: Your description
+    usage: /<command>
